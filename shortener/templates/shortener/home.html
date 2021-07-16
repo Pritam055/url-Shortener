@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class=" text-center col-sm-6 mx-auto">
+        <h1>{{ title }}</h1> 
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Shorten &raquo;" class="btn btn-outline-success">
+        </form> 
+    </div>
+</div>
+{% endblock %}

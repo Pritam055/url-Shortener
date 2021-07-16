@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Exists {% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-sm-7 mx-auto">
+        <h1>Exists</h1>
+        <hr>
+        {% if object.clickevent.count %}
+            <p><b>Visited count: </b> {{ object.clickevent.count }} </p>
+        {% endif %}
+        <p><b>Long URL : </b> {{ object.url }}</p>
+        <p><b>Short URL : </b><a target="_blank" href="{% url 'redirect_url' shortcode=object.shortcode %}">{{ object.get_short_url }}</a></p>
+        <a href="{% url 'home' %}" class="btn btn-primary">&laquo; Back</a>
+    </div>
+    </div>
+{% endblock %}
